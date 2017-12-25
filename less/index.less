@@ -1,0 +1,250 @@
+@import "base";
+
+#layout {
+  margin: 0 auto;
+  background-color: #ccc;
+  max-width: 640px;
+  min-width: 320px;
+}
+
+//顶部条
+#topbar {
+  position: fixed;
+  z-index: 999;
+  padding: 5px;
+  max-width: 640px;
+  width: 100%;
+  >i {
+    float: left;
+    display: block;
+    margin-top: 4px;
+    margin-left: 10px;
+    width: 60px;
+    height: 22px;
+    background-image: url('../images/sprites.png');
+    background-size: 200px 200px;
+    background-position: 0 -108px;
+  }
+
+  >form {
+    margin-left: 80px;
+    margin-right: 52px;
+    position: relative;
+    >i {
+      position: absolute;
+      left: 8px;
+      top: 6px;
+      width: 21px;
+      height: 20px;
+      background-image: url('../images/sprites.png');
+      background-size: 200px 200px;
+      background-position: -60px -110px;
+    }
+
+    >input {
+      padding-left: 35px;
+      height: 30px;
+      width: 100%;
+      border-radius: 15px;
+    }
+
+  }
+
+  >a {
+    float: right;
+    margin-right: 10px;
+    line-height: 30px;
+    color: #fff;
+  }
+}
+
+
+
+//轮播图
+#slide {
+  overflow: hidden;
+  position: relative;
+  >ul {
+    width: 1000%;
+    transition: all 200ms;
+    transform: translateX(-10%);
+    >li {
+      width: 10%;
+      float: left;
+      >a {
+        display: block;
+        width: 100%;
+        >img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  >ol {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    >li {
+      float: left;
+      margin-right: 8px;
+      width: 8px;
+      height: 8px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      &.active {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+
+
+//导航条
+#nav {
+  background-color: #fff;
+  >ul {
+    padding: 10px;
+    >li {
+      float: left;
+      width: 25%;
+      text-align: center;
+      >a {
+        >img {
+          width: 40px;
+        }
+        >p {
+          font-size: 12px;
+          margin: 5px 0 ;
+        }
+      }
+    }
+  }
+}
+
+
+
+//秒杀区
+#seckill {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+
+  //秒杀头部
+  .seckill-heading {
+    padding: 10px;
+    .clock {
+      display: inline-block;
+      margin-top: -5px;
+      margin-right: 5px;
+      float: left;
+      width: 20px;
+      height: 25px;
+      background-image: url('../images/seckill-icon.png');
+      background-size: 20px 25px;
+    }
+
+    .title {
+      float: left;
+      font-size: 12px;
+      color: @main-color;
+    }
+
+    >ul {
+      >li {
+        float: left;
+        margin-left: 5px;
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        line-height: 16px;
+        background-color: #000;
+        color: #fff;
+        &:nth-child(3n) {
+          width: 3px;
+          background-color: transparent;
+          color: #000;
+        }
+      }
+    }
+    
+    >a {
+      float: right;
+      font-size: 12px;
+      color: #000;
+    }
+  }
+
+  //秒杀主体
+  .seckill-body {
+    >ul {
+      li> {
+        float: left;
+        width: 33.33333%;
+        text-align: center;
+        &+li {
+          border-left: 1px solid #ccc;
+        }
+        >a {
+          display: block;
+          margin: 0 auto;
+          font-size: 12px;
+          >img {
+            width: 80%;
+          }
+          >p {
+            color: @main-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+//京东超市
+#market {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  .one {
+    margin-top: 10px;
+    background-color: #fff;
+    .market-heading {
+      position: relative;
+      padding: 5px 0 5px 20px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 13px;
+        top: 9px;
+        width: 3px;
+        height: 13px;
+        background-color: @main-color;
+      }
+    }
+
+    .market-body {
+      >div {
+        float: left;
+        width: 50%;
+
+        &.marketleft {
+          >img {
+            width: 100% ;
+          }
+        }
+
+        &.marketright {
+          >img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+}
+
